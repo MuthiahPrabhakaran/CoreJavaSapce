@@ -1,31 +1,21 @@
-package com.avoidingreference.bean;
+package org.escaping_reference.bean;
 
-import com.reference.bean.Price;
 
-public class Book implements BookInterface {
+public class Book {
 	private int id;
 	private String title;
 	private String author;
 	private Price price;
 
 	//int, String are immutable. So no issues.
-	/* (non-Javadoc)
-	 * @see com.avoidingreference.bean.BookInterface#getId()
-	 */
 	public int getId() {
 		return id;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.avoidingreference.bean.BookInterface#getTitle()
-	 */
 	public String getTitle() {
 		return title;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.avoidingreference.bean.BookInterface#getAuthor()
-	 */
 	public String getAuthor() {
 		return author;
 	}
@@ -37,17 +27,11 @@ public class Book implements BookInterface {
 		this.price = new Price(price);
 	}
 
-	/* (non-Javadoc)
-	 * @see com.avoidingreference.bean.BookInterface#toString()
-	 */
 	public String toString() {
 		return title + " by " + author;
 	}
 	
 	//Need to check the escape reference
-	/* (non-Javadoc)
-	 * @see com.avoidingreference.bean.BookInterface#getPrice()
-	 */
 	public Price getPrice() {
 		return this.price;
 	}

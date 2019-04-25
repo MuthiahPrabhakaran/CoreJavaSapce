@@ -1,4 +1,4 @@
-package com.avoidingreference;
+package org.escaping_reference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -6,9 +6,8 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+import org.escaping_reference.bean.Book;
 
-import com.avoidingreference.bean.Book;
-import com.avoidingreference.bean.BookInterface;
 
 public class BookCollection {
 	
@@ -29,8 +28,9 @@ public class BookCollection {
 	}
 	
 	
-	public BookInterface findBookByName(String title) {
-		for (BookInterface book : books) {
+	//Escaping reference -> book is not a immutable object
+	public Book findBookByName(String title) {
+		for (Book book : books) {
 			if (book.getTitle().equals(title)) {
 				return book;
 			}
@@ -39,7 +39,7 @@ public class BookCollection {
 	}
 	
 	public void printAllBooks() {
-		for (BookInterface book : books) {
+		for (Book book : books) {
 			System.out.println(book.getTitle() + ": " + book.getPrice());
 		}
 	}

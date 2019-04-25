@@ -1,4 +1,4 @@
-package com.avoidingreference.bean;
+package org.escaping_reference.bean;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,8 @@ public class Price {
 		else {
 			//Appear to be mutating the value
 			Double conversion = rates.get("USD") / rates.get(toCurrency);
-			return conversion * value;
+			value = conversion * value;
+			return value;
 		}
 	}
 	

@@ -1,6 +1,5 @@
-package com.avoidingreference;
+package org.escaping_reference;
 
-import com.reference.BookCollection;
 
 public class Main {
 
