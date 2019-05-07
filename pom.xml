@@ -8,5 +8,6 @@
   <modules>
   	<module>EscapingReference</module>
     <module>AvoidingEscapingReference</module>
+    <module>creational-design-patterns</module>
   </modules>
 </project>
