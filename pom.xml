@@ -9,5 +9,6 @@
   	<module>EscapingReference</module>
     <module>AvoidingEscapingReference</module>
     <module>creational-design-patterns</module>
+    <module>java8</module>
   </modules>
 </project>
