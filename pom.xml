@@ -10,5 +10,6 @@
     <module>AvoidingEscapingReference</module>
     <module>creational-design-patterns</module>
     <module>java8</module>
+    <module>multi-threading</module>
   </modules>
 </project>
