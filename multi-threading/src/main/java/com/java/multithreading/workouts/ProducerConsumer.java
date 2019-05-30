@@ -9,7 +9,6 @@ public class ProducerConsumer {
 		final PCClass pc = new PCClass();
 		Thread t1 = new Thread(new Runnable() {
 
-			@Override
 			public void run() {
 				try {
 					pc.produce();
@@ -22,7 +21,6 @@ public class ProducerConsumer {
 
 		Thread t2 = new Thread(new Runnable() {
 
-			@Override
 			public void run() {
 				try {
 					pc.consume();
