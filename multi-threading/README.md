@@ -96,6 +96,13 @@ We need to access some shared resource from a slow network which can handle only
 
 [Example](https://github.com/MuthiahPrabhakaran/corejava/blob/master/multi-threading/src/main/java/com/java/multithreading/workouts/SemaphoreExample2.java)
 
+## CountDownLatch
+
+CountDownLatch is used to make sure that a task waits for other threads before it starts. To understand its application, let us consider a server where the main task can only start when all the required services have started.
+
+Working of CountDownLatch:
+When we create an object of CountDownLatch, we specify the number of threads it should wait for, all such thread are required to do count down by calling CountDownLatch.countDown() once they are completed or ready to the job. As soon as count reaches zero, the waiting task starts running. 
+
 ## Producer-Consumer Problem
 In computing, the producer–consumer problem (also known as the bounded-buffer problem) is a classic example of a multi-process synchronization problem. The problem describes two processes, the producer and the consumer, which share a common, fixed-size buffer used as a queue.
 
