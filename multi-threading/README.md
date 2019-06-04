@@ -92,6 +92,10 @@ We need to access some shared resource from a slow network which can handle only
 
 `` Semaphore sem = new Semaphore(permit, fair);``
 
+[Reference](https://www.geeksforgeeks.org/java-util-concurrent-semaphore-class-java/)
+
+[Example](https://github.com/MuthiahPrabhakaran/corejava/blob/master/multi-threading/src/main/java/com/java/multithreading/workouts/SemaphoreExample2.java)
+
 ## Producer-Consumer Problem
 In computing, the producer–consumer problem (also known as the bounded-buffer problem) is a classic example of a multi-process synchronization problem. The problem describes two processes, the producer and the consumer, which share a common, fixed-size buffer used as a queue.
 
@@ -106,4 +110,3 @@ The producer is to either go to sleep or discard data if the buffer is full. The
 An inadequate solution could result in a deadlock where both processes are waiting to be awakened.
 
 [example](https://github.com/MuthiahPrabhakaran/corejava/blob/master/multi-threading/src/main/java/com/java/multithreading/workouts/ProducerConsumer.java)
-
