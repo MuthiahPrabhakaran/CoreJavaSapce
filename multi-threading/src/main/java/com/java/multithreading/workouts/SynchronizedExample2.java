@@ -1,10 +1,10 @@
 package com.java.multithreading.workouts;
 
-public class SynchronizedExample_1 {
+public class SynchronizedExample2 {
 	public static void main(String[] args) {
-		Sender sender = new Sender();
-		ThreadSend t1 = new ThreadSend("msg1", sender);
-		ThreadSend t2 = new ThreadSend("msg2", sender);
+		SenderClass sender = new SenderClass();
+		ThreadedSend t1 = new ThreadedSend("msg1", sender);
+		ThreadedSend t2 = new ThreadedSend("msg2", sender);
 		t1.start();
 		t2.start();
 		
@@ -19,23 +19,25 @@ public class SynchronizedExample_1 {
 	
 }
 
-class Sender{
-	public synchronized void send(String msg) {
-		System.out.println("sending\t" + msg);
+class SenderClass{
+	public void send(String msg) {
+		synchronized(this) {
+			System.out.println("sending\t" + msg);
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		System.out.println(msg + "\tSent"); 	
+		}
 	}
 }
 
-class ThreadSend extends Thread{
+class ThreadedSend extends Thread{
 	private String msg;
-	private Sender sender;
+	private SenderClass sender;
 	
-	ThreadSend(String msg, Sender sender){
+	ThreadedSend(String msg, SenderClass sender){
 		this.msg = msg;
 		this.sender = sender;
 	}
