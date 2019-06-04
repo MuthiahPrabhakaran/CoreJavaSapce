@@ -66,6 +66,32 @@ There are three overloaded join functions.
     ~~~~
 [example](https://github.com/MuthiahPrabhakaran/corejava/blob/master/multi-threading/src/main/java/com/java/multithreading/workouts/ThreadCommunication.java)
 
+## Semaphore
+A semaphore controls access to a shared resource through the use of a counter. If the counter is greater than zero, then access is allowed. If it is zero, then access is denied. What the counter is counting are permits that allow access to the shared resource. Thus, to access the resource, a thread must be granted a permit from the semaphore.
+
+**Working of semaphore**
+
+In general, to use a semaphore, the thread that wants access to the shared resource tries to acquire a permit.
+
+-   If the semaphore’s count is greater than zero, then the thread acquires a permit, which causes the semaphore’s count to be decremented.
+-   Otherwise, the thread will be blocked until a permit can be acquired.
+-   When the thread no longer needs an access to the shared resource, it releases the permit, which causes the semaphore’s count to be incremented.
+-   If there is another thread waiting for a permit, then that thread will acquire a permit at that time.
+
+**Difference b/w Threadpool and Semaphore**
+Threadpool control the total number of threads that we can use in the application in a given time where Semaphore limits the number of threads for a shared resource.
+We can have Threadpool as well as Semaphore in a same scenario.
+
+**Example:**
+We need to access some shared resource from a slow network which can handle only 5 requests at a time. Our application is limited to 15 Threadpools. We can implement Semaphore to access the shared resource alone.
+
+**tryAcquire()** method (optional we can give time restriction)  . If  there is no permit available, it will return false. Meanwhile, We can use the particular thread to perform some other activity with the use of tryAcquire().
+
+ **fair**  `true`  
+ If this semaphore will guarantee first-in first-out granting of permits under contention, else  `false`
+
+`` Semaphore sem = new Semaphore(permit, fair);``
+
 ## Producer-Consumer Problem
 In computing, the producer–consumer problem (also known as the bounded-buffer problem) is a classic example of a multi-process synchronization problem. The problem describes two processes, the producer and the consumer, which share a common, fixed-size buffer used as a queue.
 
@@ -80,3 +106,4 @@ The producer is to either go to sleep or discard data if the buffer is full. The
 An inadequate solution could result in a deadlock where both processes are waiting to be awakened.
 
 [example](https://github.com/MuthiahPrabhakaran/corejava/blob/master/multi-threading/src/main/java/com/java/multithreading/workouts/ProducerConsumer.java)
+
