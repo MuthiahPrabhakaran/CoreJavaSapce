@@ -28,11 +28,19 @@ public class DbSingleton {
         }
     }
 
+    /**
+     * We haven't make the whole method synchronized. It will slow down the app
+     * Whenever a object calls this method, it will go into synchronized mode
+     */
     public static DbSingleton getInstance() {
-        if (instance == null) {
+        if (instance == null) {             // Lazily loaded
             synchronized (DbSingleton.class) { // it will protect from objects created through
                                                // reflection + if two
                                                // threads concurrently trying to create an instance
+
+                // This is a double check locking mechanism. Eg, if two threads are concurrently accessing this method,\
+                // One has a lock on it, it will create the instance on first time. Then, when a second thread got access,
+                // It won't again create the instance. This scenario happens on the very first time alone.
                 if (instance == null) {
                     instance = new DbSingleton();
                 }
