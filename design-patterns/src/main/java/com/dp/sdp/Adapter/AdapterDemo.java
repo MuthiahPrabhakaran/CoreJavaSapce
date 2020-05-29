@@ -8,12 +8,6 @@ public class AdapterDemo {
         List<Employee> employees = client.getEmployeeList();
 
 
-        //Will not work! This is where the adapter comes into play!
-        //Employee employeeFromLdap = new EmployeeLdap("chewie", "Solo", "Han", "han@solo.com");
-
-        EmployeeLdap employeeFromLdap = new EmployeeLdap("chewie", "Solo", "Han", "han@solo.com");
-        employees.add(new EmployeeAdapterFromLdap(employeeFromLdap));
-
         System.out.println(employees);
     }
 }

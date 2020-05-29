@@ -8,7 +8,7 @@
   <modules>
   	<module>EscapingReference</module>
     <module>AvoidingEscapingReference</module>
-    <module>creational-design-patterns</module>
+    <module>design-patterns</module>
     <module>java8</module>
     <module>multi-threading</module>
   </modules>
