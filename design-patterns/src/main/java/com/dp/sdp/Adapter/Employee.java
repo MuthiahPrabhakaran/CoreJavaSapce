@@ -1,4 +1,4 @@
-package com.dp.sdp.Adapter;
+package com.dp.sdp.adapter;
 
 public interface Employee {
 
