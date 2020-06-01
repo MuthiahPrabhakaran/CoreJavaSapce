@@ -20,5 +20,9 @@ public class SimpleFilter {
         Stream<Integer> anotherStream = anotherList.stream().filter(p4);
         anotherStream.forEach(System.out::println);
 
+        Predicate<Integer> p5 = Predicate.isEqual(2);
+        Stream<Integer> newStream = Stream.of(1,2,3,4,5);
+        newStream.filter(p5).forEach(s -> System.out.println(s));
+
     }
 }
