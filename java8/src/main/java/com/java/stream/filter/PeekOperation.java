@@ -1,4 +1,4 @@
-package com.java.stream.simple;
+package com.java.stream.filter;
 
 import java.util.List;
 import java.util.stream.Collectors;
