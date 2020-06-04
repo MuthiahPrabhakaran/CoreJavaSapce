@@ -1,6 +1,9 @@
 package com.java.stream.reduction;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.BinaryOperator;
 import java.util.stream.Stream;
 
@@ -20,5 +23,17 @@ public class BasicReduce {
 
         System.out.println(ages.stream().count());
         ages.stream().sorted().forEach(System.out::println);
+
+        System.out.println(ages.stream().reduce(0, Integer::sum));
+
+        ages = List.of(-10); // Try assigning value like -10, 10
+        int maxElement = ages.stream().reduce(2, Integer::max);
+        System.out.println("maxElement "+maxElement);
+
+
+        ages = List.of();// Try with negative values
+        Optional<Integer> maxValue = ages.stream().reduce(Integer::max);
+        System.out.println(maxValue.isEmpty());
+
     }
 }
