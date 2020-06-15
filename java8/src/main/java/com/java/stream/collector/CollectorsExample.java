@@ -2,9 +2,6 @@ package com.java.stream.collector;
 
 import com.java.stream.map.Person;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
