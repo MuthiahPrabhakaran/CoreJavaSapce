@@ -5,11 +5,11 @@ class Runner1 extends Thread{
     public void run(){
         for(int i=0;i<9;i++){
             System.out.println("Runner1 : "+i);
-            try {
+            /*try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }
+            }*/
         }
     }
 }
@@ -36,5 +36,14 @@ public class CThreadExample {
 
         runner1.start();
         runner2.start();
+
+        try {
+            runner1.join();
+            runner2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Tasks executed successfully");
     }
 }
