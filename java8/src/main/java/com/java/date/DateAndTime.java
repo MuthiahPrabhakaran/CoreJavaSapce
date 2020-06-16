@@ -1,9 +1,8 @@
 package com.java.date;
 
-import java.time.LocalDate;
-import java.time.Month;
-import java.time.Period;
+import java.time.*;
 import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 
 public class DateAndTime {
@@ -29,6 +28,12 @@ public class DateAndTime {
                     + "[" + p.getDateOfBirth().until(now, ChronoUnit.MONTHS)+" months]");
                 }
         );
+
+
+        LocalDate nextSunday = now.with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
+        System.out.println(nextSunday);
+
+
 
     }
 }
