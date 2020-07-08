@@ -8,6 +8,7 @@ public class DSynchronizedBlock {
     private static Object object2 = new Object();
 
     private static void add(){
+        // It will acquire a lock on object 1. If you use this keyword, it will acquire lock on the class
         synchronized(object1){
             count++;
         }
