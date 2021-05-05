@@ -1,4 +1,4 @@
-package mp.jokeserver;
+package com.mp.jokeserver;
 
 import java.util.logging.*;
 import java.util.List;

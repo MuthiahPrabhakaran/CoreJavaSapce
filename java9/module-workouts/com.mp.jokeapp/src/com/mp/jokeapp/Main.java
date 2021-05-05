@@ -1,6 +1,6 @@
-package mp.jokeapp;
+package com.mp.jokeapp;
 
-import mp.jokeserver.*;
+import com.mp.jokeserver.JokeServer;
 
 public class Main {
 
