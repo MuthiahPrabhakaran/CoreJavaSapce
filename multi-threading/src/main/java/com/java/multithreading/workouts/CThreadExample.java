@@ -21,7 +21,7 @@ class Runner2 extends Thread{
         for(int i=0;i<9;i++){
             System.out.println("Runner2 : "+i);
             try {
-                Thread.sleep(1000);
+                Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
