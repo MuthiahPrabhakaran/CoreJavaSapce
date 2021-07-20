@@ -29,12 +29,3 @@ public class ExecutorDemo {
     }
 }
 
-class LongTask {
-    public static void simulate() {
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-}
